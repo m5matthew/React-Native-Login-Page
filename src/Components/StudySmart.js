@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Text, TextInput, View, Button, TouchableOpacity} from 'react-native';
 import {styles, studySmart} from '../stylesheet'
-import {GoogleSignin} from 'react-native-google-signin'
+import {GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin'
 
 export default class StudySmart extends Component {
 
@@ -17,18 +17,12 @@ export default class StudySmart extends Component {
         {/*LOGIN AND SIGNUP BUTTONS*/}
         <View style={studySmart.loginButtonContainer}>
           <View style={studySmart.loginButtons}>
-            <Button
-              onPress={this.googleAuth.bind(this)}
-              title="LOGIN"
-              color="white"
-            />
-          </View>
-          <View style={studySmart.loginButtons}>
-            <Button
-              onPress={() => this.props.navigation.navigate('EnterName')}
-              title="SIGN UP"
-              color="white"
-            />
+            <GoogleSigninButton
+              style={{width:312, height:48}}
+              size={GoogleSigninButton.Size.Wide}
+              color={GoogleSigninButton.Color.Dark}
+              onPress={this.signIn.bind(this)}
+              />
           </View>
         </View>
       </View>
@@ -39,23 +33,32 @@ export default class StudySmart extends Component {
   this.setupGoogleSignin();
   }
 
-  googleAuth() {
-    GoogleSignin.signIn()
-      .then((user) => {
-        console.log(user);
-      })
-      .catch((err) => {
-        console.log('WRONG SIGNIN', err);
-      })
-      .done();
+  signIn = async () => {
+  try {
+    console.log("User Signing in!");
+    await GoogleSignin.hasPlayServices();
+    const userInfo = await GoogleSignin.signIn();
+    this.setState({ userInfo });
+  } catch (error) {
+    if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+    } else if (error.code === statusCodes.IN_PROGRESS) {
+      // operation (f.e. sign in) is in progress already
+    } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+      // play services not available or outdated
+    } else {
+      // some other error happened
+    }
   }
+
+  console.log(this.state.userInfo);
+};
 
   async setupGoogleSignin() {
     try {
       await GoogleSignin.hasPlayServices({ autoResolve: true });
       await GoogleSignin.configure({
-        iosClientId: '',
-        webClientId: '',
+        iosClientId: 'Enter key here',
+        webClientId: 'Enter key here',
         offlineAccess: false
       });
 

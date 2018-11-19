@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: 'powderblue',
+    backgroundColor: 'white',
     paddingHorizontal:'5%',
     paddingVertical:'2%',
   },
@@ -45,10 +45,9 @@ export const styles = StyleSheet.create({
 
 export const studySmart = StyleSheet.create({
   loginButtons:{
-    height:'40%',
     marginBottom:10,
     justifyContent: 'center',
-    backgroundColor: 'black',
+    alignItems: 'center',
   },
   title:{
     color:'black',
@@ -64,7 +63,7 @@ export const studySmart = StyleSheet.create({
 
   loginButtonContainer:{
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'stretch',
   },
 
