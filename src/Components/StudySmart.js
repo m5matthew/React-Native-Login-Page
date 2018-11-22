@@ -50,6 +50,7 @@ export default class StudySmart extends Component {
     }
   }
 
+  //user info may be uninitialized here
   console.log(this.state.userInfo);
 };
 
