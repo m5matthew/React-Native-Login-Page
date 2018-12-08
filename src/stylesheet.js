@@ -53,8 +53,7 @@ export const studySmart = StyleSheet.create({
   },
   title:{
     color:'black',
-    fontWeight:'bold',
-    fontFamily: "Roboto",
+    fontFamily: "Roboto-Light",
     fontSize: 36,
     letterSpacing: 3.52,
   },
