@@ -1,4 +1,4 @@
-import { ADD_FIRST_NAME, ADD_LAST_NAME, ADD_MAJOR, ADD_YEAR, ADD_USERNAME, ADD_PASS } from '../Actions/actions';
+import { ADD_FIRST_NAME, ADD_LAST_NAME, ADD_MAJOR, ADD_YEAR, ADD_USERNAME, ADD_EMAIL } from '../Actions/actions';
 
 const initialState = {
   firstName: '',
@@ -6,7 +6,7 @@ const initialState = {
   major:'',
   year:'',
   username:'',
-  pass:'',
+  email:'',
 };
 
 const ProfileReducer = (state = initialState, action) => {
@@ -36,11 +36,11 @@ const ProfileReducer = (state = initialState, action) => {
         ...state,
         username: action.username
       };
-    case ADD_PASS:
-      return {
+    case ADD_EMAIL:
+      return{
         ...state,
-        pass: action.pass
-      };
+        email: action.email
+      }
     default:
       return state;
   }

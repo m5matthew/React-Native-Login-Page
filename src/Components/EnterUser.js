@@ -13,18 +13,12 @@ class EnterUser extends Component{
     };
   }
 
-  static navigationOptions = {
-    headerStyle:{
-      backgroundColor:'powderblue',
-    },
-  };
-
   inputSubmitHandler = () => {
     if(this.state.username.trim()===''){
       return;
     }
     this.props.addUsername(this.state.username);
-    this.props.navigation.navigate('EnterPass');
+    this.props.navigation.navigate('EnterMajor');
   }
 
   inputChangeHandler = (textInput) => {

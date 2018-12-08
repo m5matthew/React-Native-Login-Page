@@ -12,17 +12,11 @@ export default class EnterUser extends Component{
     };
   }
 
-  static navigationOptions = {
-    headerStyle:{
-      backgroundColor:'powderblue',
-    },
-  };
-
   inputSubmitHandler = () => {
     if(this.state.username.trim()==='' || this.state.password.trim()===''){
       return;
     }
-    {/*Make API CALL HERE*/}
+    /* Make API CALL HERE */
   }
 
   usernameInputChangeHandler = (textInput) => {

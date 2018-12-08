@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {addFirstName, addLastName} from '../Actions/actions';
 import {Text, TextInput, View, Button, TouchableOpacity, Alert} from 'react-native';
-import {styles, studySmart} from '../stylesheet'
+import {connect} from 'react-redux';
 import {GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin'
+import {styles, studySmart} from '../stylesheet'
+import {addFirstName, addLastName, addEmail} from '../Actions/actions';
+import {config} from '../../config.js';
+
+const GOOGLE_API_KEY = config.GOOGLE_API_KEY;
 
 export class StudySmart extends Component {
 
@@ -41,7 +44,7 @@ export class StudySmart extends Component {
     try {
       await GoogleSignin.hasPlayServices({ autoResolve: true });
       await GoogleSignin.configure({
-        webClientId: 'Enter key here',
+        webClientId: GOOGLE_API_KEY,
         offlineAccess: false
       });
 
@@ -90,10 +93,16 @@ export class StudySmart extends Component {
       /* For now, assume user is new */
       console.log("Sign-in successfull: Email is valid");
       console.log(this.state.userInfo);
+
+      /* Add data to redux */
       this.props.addFirstName(this.state.userInfo.user.givenName);
       this.props.addLastName(this.state.userInfo.user.familyName);
-      this.props.navigation.navigate('EnterYear');
+      this.props.addEmail(this.state.userInfo.user.email);
+      this.props.navigation.navigate('EnterUser');
       this.signOut();
+      console.log(this.props.firstName);
+      console.log(this.props.lastName);
+      console.log(this.props.email);
     }
   };
 
@@ -122,6 +131,7 @@ const mapStateToProps = state => {
   return {
     firstName: state.profile.firstName,
     lastName: state.profile.lastName,
+    email: state.profile.email,
   }
 }
 
@@ -132,7 +142,10 @@ const mapDispatchToProps = dispatch => {
     },
     addLastName: (lastName) =>{
       dispatch(addLastName(lastName))
-    }
+    },
+    addEmail: (email) => {
+      dispatch(addEmail(email))
+    },
   }
 }
 

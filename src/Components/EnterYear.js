@@ -13,18 +13,12 @@ class EnterYear extends Component{
     };
   }
 
-  static navigationOptions = {
-    headerStyle:{
-      backgroundColor:'powderblue',
-    },
-  };
-
   inputSubmitHandler = () => {
     if(this.state.year.trim()===''){
       return;
     }
     this.props.addYear(this.state.year);
-    this.props.navigation.navigate('EnterUser');
+    //this.props.navigation.navigate('EnterUser');
   }
 
   inputChangeHandler = (textInput) => {

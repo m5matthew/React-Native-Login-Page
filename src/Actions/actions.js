@@ -4,7 +4,7 @@ export const ADD_LAST_NAME = 'ADD_LAST_NAME'
 export const ADD_MAJOR = 'ADD_MAJOR'
 export const ADD_YEAR = 'ADD_YEAR'
 export const ADD_USERNAME = 'ADD_USERNAME'
-export const ADD_PASS = 'ADD_PASS'
+export const ADD_EMAIL = 'ADD_EMAIL'
 
 // This is an action creator, it simply specifies the action.
 // this is what we call to send an action.
@@ -38,9 +38,9 @@ export const addUsername = username => {
     username: username,
   }
 }
-export const addPass = pass => {
-  return {
-    type: ADD_PASS,
-    pass: pass,
+export const addEmail = email =>{
+  return{
+    type: ADD_EMAIL,
+    email: email,
   }
 }

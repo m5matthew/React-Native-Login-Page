@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
 
+export const NAVIGATOR_BAR_COLOR = 'white';
+
 export const styles = StyleSheet.create({
   container: {
     flex:1,
@@ -52,7 +54,9 @@ export const studySmart = StyleSheet.create({
   title:{
     color:'black',
     fontWeight:'bold',
-    fontSize: 30,
+    fontFamily: "Roboto",
+    fontSize: 36,
+    letterSpacing: 3.52,
   },
 
   titleContainer:{

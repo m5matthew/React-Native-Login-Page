@@ -12,13 +12,7 @@ class EnterMajor extends Component{
       major:''
     };
   }
-
-  static navigationOptions = {
-    headerStyle:{
-      backgroundColor:'powderblue',
-    },
-  };
-
+  
   inputSubmitHandler = () => {
     if(this.state.major.trim()===''){
       return;
