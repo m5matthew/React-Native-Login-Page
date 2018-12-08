@@ -12,7 +12,7 @@ export class StudySmart extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={studySmart.container}>
 
         {/* STUDYSMART TITLE */}
         <View style={studySmart.titleContainer}>
@@ -21,14 +21,12 @@ export class StudySmart extends Component {
 
         {/* LOGIN AND SIGNUP BUTTONS */}
         <View style={studySmart.loginButtonContainer}>
-          <View style={studySmart.loginButtons}>
-            <GoogleSigninButton
-              style={{width:312, height:48}}
-              size={GoogleSigninButton.Size.Wide}
-              color={GoogleSigninButton.Color.Dark}
-              onPress={this.signIn.bind(this)}
-              />
-          </View>
+          <TouchableOpacity onPress={this.signIn.bind(this)} style={studySmart.loginButton} >
+              <Text style={studySmart.loginText}>LOG IN WITH GMAIL</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.signIn.bind(this)} style={studySmart.signupButton}>
+              <Text style={studySmart.loginText}>SIGN UP</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );

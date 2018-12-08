@@ -46,15 +46,32 @@ export const styles = StyleSheet.create({
 });
 
 export const studySmart = StyleSheet.create({
-  loginButtons:{
-    marginBottom:10,
-    justifyContent: 'center',
+  container:{
+    flex:1,
+    backgroundColor: 'white',
+  },
+  loginButton:{
     alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#d95040',
+    flex: 1,
+  },
+  signupButton:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: "#f2bd42",
+    flex: 1,
+  },
+  loginText:{
+    color: 'white',
+    letterSpacing: 1.92,
+    fontFamily: "Roboto-Light",
+    fontSize: 28,
   },
   title:{
     color:'black',
     fontFamily: "Roboto-Light",
-    fontSize: 36,
+    fontSize: 40,
     letterSpacing: 3.52,
   },
 
@@ -66,8 +83,6 @@ export const studySmart = StyleSheet.create({
 
   loginButtonContainer:{
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'stretch',
   },
 
 });
