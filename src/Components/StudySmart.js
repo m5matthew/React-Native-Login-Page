@@ -89,7 +89,7 @@ export class StudySmart extends Component {
     if(this.state.userInfo){
       /* TODO: API call to see if user is new */
       /* For now, assume user is new */
-      console.log("Sign-in successfull: Email is valid");
+      console.log("Sign-in successfull: Email is valid.");
       console.log(this.state.userInfo);
 
       /* Add data to redux */
