@@ -12,7 +12,7 @@ class EnterMajor extends Component{
       major:''
     };
   }
-  
+
   inputSubmitHandler = () => {
     if(this.state.major.trim()===''){
       return;
@@ -31,7 +31,7 @@ class EnterMajor extends Component{
     return(
     <View style={styles.container}>
       <View style={styles.prompt}>
-        <Text style={{fontSize:50}}>WHAT IS YOUR MAJOR?</Text>
+        <Text style={styles.promptText}>WHAT IS YOUR MAJOR?</Text>
       </View>
       <View style={styles.textInputContainer}>
         <TextInput style={styles.textInput}

@@ -31,7 +31,7 @@ class EnterYear extends Component{
     return(
     <View style={styles.container}>
       <View style={styles.prompt}>
-        <Text style={{fontSize:50}}>WHAT IS YOUR YEAR?</Text>
+        <Text style={styles.promptText}>WHAT IS YOUR YEAR?</Text>
       </View>
       <View style={styles.textInputContainer}>
         <TextInput style={styles.textInput}
