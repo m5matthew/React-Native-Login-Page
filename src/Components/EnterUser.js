@@ -31,7 +31,7 @@ class EnterUser extends Component{
     return(
     <View style={styles.container}>
       <View style={styles.prompt}>
-        <Text style={{fontSize:50}}>CREATE YOUR USERNAME</Text>
+        <Text style={styles.promptText}>CREATE YOUR USERNAME</Text>
       </View>
       <View style={styles.textInputContainer}>
         <TextInput style={styles.textInput}

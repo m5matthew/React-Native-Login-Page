@@ -17,6 +17,11 @@ export const styles = StyleSheet.create({
     paddingBottom:'4%',
   },
 
+  promptText: {
+    fontSize: 45,
+    letterSpacing: 1.92,
+    fontFamily: "Roboto-Bold",
+  },
   textInputContainer: {
     flex:1,
     justifyContent: 'flex-start',
@@ -36,9 +41,9 @@ export const styles = StyleSheet.create({
 
   textInput:{
     fontSize: 25,
-    marginBottom:'10%',
-    paddingBottom:1,
+    paddingBottom:15,
     borderBottomWidth: 1,
+    fontFamily: "Roboto-Medium",
     color:'#808080',
     borderColor: '#808080',
   }
