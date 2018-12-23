@@ -35,8 +35,7 @@ export const styles = StyleSheet.create({
   },
 
   buttonSubmit:{
-    backgroundColor:'black',
-    justifyContent:'center',
+    justifyContent:'flex-end',
   },
 
   textInput:{
