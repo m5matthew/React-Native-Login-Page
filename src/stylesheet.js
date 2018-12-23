@@ -31,11 +31,14 @@ export const styles = StyleSheet.create({
   buttonContainer:{
     flex:2,
     justifyContent:'flex-end',
+    alignItems:'flex-end',
     paddingBottom: '3%',
   },
 
   buttonSubmit:{
-    justifyContent:'flex-end',
+    alignItems:'flex-end',
+    width:50,
+    height:50,
   },
 
   textInput:{
@@ -45,6 +48,11 @@ export const styles = StyleSheet.create({
     fontFamily: "Roboto-Medium",
     color:'#808080',
     borderColor: '#808080',
+  },
+
+  buttonSize:{
+    width:50,
+    height:50,
   }
 
 });

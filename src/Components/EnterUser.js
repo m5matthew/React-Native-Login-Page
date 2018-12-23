@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Text, TextInput, View, Button, TouchableHighlight, Image} from 'react-native';
+import {Text, TextInput, View, Button, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {addUsername} from '../Actions/actions';
 import {styles} from '../stylesheet'
@@ -41,11 +41,13 @@ class EnterUser extends Component{
             />
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableHighlight
+        <TouchableOpacity
           style={styles.buttonSubmit}
           onPress = {this.inputSubmitHandler}>
-          <Image source={require('../../nextButton.png')} />
-        </TouchableHighlight>
+          <Image
+          source={require('../../nextButton.png')}
+          style={styles.buttonSize}/>
+        </TouchableOpacity>
       </View>
     </View>
   );}
