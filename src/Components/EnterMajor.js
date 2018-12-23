@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Text, TextInput, View, Button} from 'react-native';
+import {Text, TextInput, View, Button, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {addMajor} from '../Actions/actions';
 import {styles} from '../stylesheet'
@@ -41,13 +41,13 @@ class EnterMajor extends Component{
             />
       </View>
       <View style={styles.buttonContainer}>
-        <View style={styles.buttonSubmit}>
-          <Button
-            onPress = {this.inputSubmitHandler}
-            title = "SUBMIT"
-            color = "white"
-          />
-        </View>
+      <TouchableOpacity
+        style={styles.buttonSubmit}
+        onPress = {this.inputSubmitHandler}>
+        <Image
+        source={require('../../assets/img/nextButton.png')}
+        style={styles.buttonSize}/>
+      </TouchableOpacity>
       </View>
     </View>
   );}

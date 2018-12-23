@@ -38,6 +38,7 @@ class EnterUser extends Component{
             placeholder = "Enter your username here"
             onChangeText = {this.inputChangeHandler}
             autoCorrect = {false}
+            autoCapitalize = 'none'
             />
       </View>
       <View style={styles.buttonContainer}>
@@ -45,7 +46,7 @@ class EnterUser extends Component{
           style={styles.buttonSubmit}
           onPress = {this.inputSubmitHandler}>
           <Image
-          source={require('../../nextButton.png')}
+          source={require('../../assets/img/nextButton.png')}
           style={styles.buttonSize}/>
         </TouchableOpacity>
       </View>
